@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Validar Edad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon slot="start" name="person-outline"></ion-icon>
+        Nombres
+      </ion-label>
+      <ion-input [(ngModel)]="nombre" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">
+        <ion-icon slot="start" name="calendar-outline"></ion-icon>
+        Edad
+      </ion-label>
+      <ion-input [(ngModel)]="edad" type="number"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" color="primary" (click)="checkAge()">
+      <ion-icon slot="start" name="checkmark-circle-outline"></ion-icon>
+      Verificar Edad
+    </ion-button>
+
+    <ion-item *ngIf="resultado">
+      <ion-label class="result-label">{{ resultado }}</ion-label>
+    </ion-item>
+  </div>
+</ion-content>
+
